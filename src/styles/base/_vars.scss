@@ -1,0 +1,50 @@
+$mainColor: #fff;
+$secondColor: #000;
+$fontColor: blue;
+$errorColor: red;
+$hoverColor: pink;
+$focusColor: darkblue;
+$borderColor: gray;
+
+$mainTransition: all .4s ease;
+
+$mockupWidth: 1920;
+$containerWidth: 1220px;
+
+@function toRem($value) {
+  $remValue: (
+    $value / 16) + rem;
+  @return $remValue;
+}
+
+@mixin adaptiveFont ($pcFontSize, $mobFontSize) {
+  $addSize: $pcFontSize - $mobFontSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+
+  @media(max-width: 767px) {
+    font-size: calc(#{$mobFontSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$mockupWidth})
+  );
+}
+
+@media(min-width: 767px) {
+  // font-size: $pcFontSize + px;
+  font-size: calc(#{$mobFontSize + px} + #{$addSize} * (100vw / #{$mockupWidth}));
+}
+}
+
+// @function adaptiveFontSize($f-max, $f-min, $v-max, $v-min, $units: rem) {
+//   $k: calc(($f-max - $f-min)/($v-max - $v-min));
+//   $b: $f-min - $k * $v-min;
+
+//   $b: $b + $units;
+
+//   @return calc(#{$k} * 100vw + #{$b});
+// }
+
+@mixin adaptiveValue($property, $S-max, $S-min ) {
+  $k: calc(($S-max - $S-min)/(768 - 320));
+  $b: $S-min - $k * 320;
+
+  $b: $b + px;
+  #{$property}: calc(#{$k} * 100vw + #{$b})
+}
