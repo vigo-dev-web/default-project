@@ -6,35 +6,31 @@
    flex-direction: column;
    justify-content: space-between;
 }
-.main {
-   flex: 1 1 auto;
-}
 
 .container {
    max-width: $containerWidth;
    margin: 0 auto;
-   padding: 0 15px;
+   padding: 0 10px;
 }
 
-@mixin btn($mainColor, $secondColor, $pY: 5px, $pX: 5px, $r: 5px) {
-   display: inline-block;
-   border: none;
-   color: $mainColor;
-   background: $secondColor;
-   font-size: inherit;
-   border-radius: $r;
-   padding: $pY $pX;
-   text-align: center;
-   cursor: pointer;
-   text-wrap: nowrap;
-   overflow: hidden;
-   transition: $mainTransition;
-   text-transform: uppercase;
+// @mixin title {
+//    font-size: $mainTitleSize;
+//    font-weight: 700;
+//    line-height: 1.3;
+//    color: $textColor;
+// }
 
-   @media (any-hover:hover) {
-      &:hover {
-         color: $secondColor;
-         background-color: $mainColor;
-      }
-   }
-}
+// @mixin link-btn ($backgroundColor, $color){
+//    display: inline-block;
+//    border: none;
+//    position: relative;
+//    background-color: $backgroundColor;
+//    color: $color;
+//    transition: $mainTransition;
+//    box-shadow: $boxShadow;
+//    @media (any-hover:hover) {
+//       &:hover {
+//          transform: translateY(3px);
+//       }
+//    }
+// }

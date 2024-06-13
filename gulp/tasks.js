@@ -22,12 +22,17 @@ function styles () {
   )
 }
 
-// function fonts () {
-//   return (
-//     gulp.src(`${paths.src}fonts/**/*.*`)
-//     .pipes(gulp.dest(`${paths.dist}fonts/`))
-//   )
-// }
+function fonts () {
+  return (
+    gulp.src(`${paths.src}fonts/**/*.*`)
+    .pipe(plugins.fonter({
+      formats: ['woff', 'ttf']
+    }))
+    .pipe(gulp.dest(`${paths.dist}fonts/*.ttf`))
+    .pipe(plugins.ttf2woff2())
+    .pipe(gulp.dest(`${paths.dist}fonts/`))
+  )
+}
 
 function img () {
   return (
@@ -55,7 +60,7 @@ function scripts() {
 const task = {
   html,
   styles,
-  // fonts,
+  fonts,
   img,
   scripts
 }

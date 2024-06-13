@@ -23,7 +23,7 @@ function startServer() {
   plugins.browserSync
 }
 
-const dev = gulp.series(cleanDist, html, styles, img, scripts, gulp.parallel(watching, startServer))
+const dev = gulp.series(cleanDist, html, styles, img, scripts, fonts, gulp.parallel(watching, startServer))
 
 export default dev
-export {html, styles, scripts, img, watching, startServer, cleanDist, copyFiles}
+export {html, styles, scripts, img, fonts, watching, startServer, cleanDist, copyFiles}
