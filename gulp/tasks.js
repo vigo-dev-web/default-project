@@ -26,10 +26,8 @@ function fonts () {
   return (
     gulp.src(`${paths.src}fonts/**/*.*`)
     .pipe(plugins.fonter({
-      formats: ['woff', 'ttf']
+      formats: ['woff', 'ttf', 'woff2']
     }))
-    .pipe(gulp.dest(`${paths.dist}fonts/*.ttf`))
-    .pipe(plugins.ttf2woff2())
     .pipe(gulp.dest(`${paths.dist}fonts/`))
   )
 }
@@ -37,10 +35,10 @@ function fonts () {
 function img () {
   return (
     gulp.src(`${paths.src}img/**/*.*`)
-    .pipe(plugins.newer(`${paths.dist}img/`))
-    .pipe(plugins.webp())
-    .pipe(gulp.dest(`${paths.dist}img/`))
-    .pipe(gulp.src(`${paths.src}img/**/*.*`))
+    // .pipe(plugins.newer(`${paths.dist}img/`))
+    // .pipe(plugins.webp())
+    // .pipe(gulp.dest(`${paths.dist}img/`))
+    // .pipe(gulp.src(`${paths.src}img/**/*.*`))
     .pipe(plugins.newer(`${paths.dist}img/`))
     .pipe(plugins.imagemin())
     .pipe(gulp.dest(`${paths.dist}img/`))

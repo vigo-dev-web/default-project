@@ -19,11 +19,12 @@ function watching() {
   gulp.watch(`${paths.src}js/**/*.js`, gulp.parallel(scripts))
 }
 
+
 function startServer() {
   plugins.browserSync
 }
 
-const dev = gulp.series(cleanDist, html, styles, img, scripts, fonts, gulp.parallel(watching, startServer))
+const dev = gulp.series(cleanDist, html, fonts, styles, img, scripts, gulp.parallel(watching, startServer))
 
 export default dev
-export {html, styles, scripts, img, fonts, watching, startServer, cleanDist, copyFiles}
+export {html, styles, scripts, fonts, img, watching, cleanDist, copyFiles, startServer,}

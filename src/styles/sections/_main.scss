@@ -1,4 +1,27 @@
 @import '../base/vars';
 @import '../base/base';
 
+.box {
+   width: 60px;
+   height: 60px;
+   margin-left: 30px;
+   background-color: aqua;
+   border-radius: 7px;
+   animation-name: rotate-box;
+   animation-duration: 3s;
+   animation-timing-function: ease-in;
+   animation-iteration-count: infinite;
+}
 
+@keyframes rotate-box {
+   from {
+      transform: 0;
+      scale: 0;
+   }
+   to {
+      transform: rotateY(180deg) rotateZ(180deg);
+      background-color: rgb(0, 255, 34);
+      scale: 100%;
+   }
+
+}
