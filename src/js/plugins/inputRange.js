@@ -1,11 +1,11 @@
-const roomFilterInputs = document.querySelectorAll('[data-room-filter]')
+const inputRangeArr = document.querySelectorAll('[data-room-filter]')
 
 const inputHandler = (targetInput, element) => {
    element.textContent = targetInput.value
 }
 
-if (roomFilterInputs.length > 0) {
-   roomFilterInputs.forEach(input => {
+if (inputRangeArr.length > 0) {
+   inputRangeArr.forEach(input => {
       input.addEventListener('input', ({ target }) => {
 
          const targetElement = input.previousSibling.previousSibling.firstElementChild;

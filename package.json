@@ -1,22 +1,22 @@
 {
-  "name": "gulp",
+  "name": "default-project",
   "version": "1.0.0",
   "description": "gulp assembling project es6",
   "main": "gulpfile.js",
+  "type": "module",
   "scripts": {
     "start": "gulp",
     "dev": "gulp",
     "clean": "gulp cleanDist",
-    "build": "gulp build --build",
+    "build": "gulp build --prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/vigonin83/gulpAssembly.git"
   },
   "keywords": [
-    "gulp"
+    "gulp, es6"
   ],
   "browserslist": [
     ">0.2%",
@@ -27,18 +27,19 @@
   "author": "Vasiliy Igonin",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.29.3",
+    "browser-sync": "^3.0.4",
     "css-loader": "^7.1.1",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
-    "gulp-imagemin": "^8.0.0",
+    "gulp-imagemin": "^9.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-ttf2woff2": "^4.0.1",
@@ -46,10 +47,12 @@
     "sass": "^1.74.1",
     "sass-loader": "^14.1.1",
     "style-loader": "^4.0.0",
-    "webpack": "^5.91.0",
+    "webpack": "^5.99.8",
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
+    "choices.js": "^11.1.0",
+    "gulp-cli": "^3.0.0",
     "swiper": "^11.1.1"
   }
 }

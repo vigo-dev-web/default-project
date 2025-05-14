@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styles/index.css">
+   <script defer src="js/index.js"></script>
+   <title>404 | Page</title>
+</head>
+<body class="body">
+   <div class="app__wrapper">
+      @@include('html/_header.htm')
+      @@include('html/_headerMobile.htm')
+      <main>
+         <section id="main-section" class="main-section  section">
+            <div class="main-section__container container">
+               <div class="error__page">
+                  404 page
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('html/_footer.htm')
+   </div>
+   @@include('html/_scrollToTop.htm')
+   @@include('html/_modal.htm')
+</body>
+
+</html>

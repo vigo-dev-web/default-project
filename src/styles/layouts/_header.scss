@@ -1,94 +1,17 @@
 @import '../base/vars';
 
 .header {
+   position: relative;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding: toRem(20) 0;
+   z-index: 150;
+   background-color: $whiteColor;
 }
 
-// .header__menu-burger {
-//    display: none;
-//    position: relative;
-
-//    @media (max-width: $tablet) {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       background-color: $mainColor;
-//       width: toRem(70);
-//       aspect-ratio: 1;
-//       padding: toRem(25) toRem(17);
-
-//       &:before {
-//          content: '';
-//          position: absolute;
-//          width: 50%;
-//          height: toRem(4);
-//          top: 30%;
-//          background-color: #fff;
-//          transition: $mainTransition;
-//       }
-
-//       &::after {
-//          content: '';
-//          position: absolute;
-//          width: 50%;
-//          height: toRem(4);
-//          bottom: 30%;
-//          background-color: #fff;
-//          transition: $mainTransition;
-//       }
-//    }
-
-//    @media (max-width: $mobile) {
-//       background-color: #fff;
-//       border: 2px solid $mainColor;
-//       border-radius: 10%;
-//       height: toRem(48);
-//       width: toRem(48);
-//       padding: toRem(15) toRem(12);
-//       &:before {
-//          height: toRem(2);
-//          background-color: $mainColor;
-//          border-radius: 2px;
-
-//       }
-//       &::after {
-//          height: toRem(2);
-//          background-color: $mainColor;
-//          border-radius: 2px;
-//       }
-
-//    }
-// }
-
-// .header__menu-burger span {
-//    @media (max-width: $tablet) {
-//       display: inline-block;
-//       width: 50%;
-//       height: toRem(4);
-//       background-color: #fff;
-//       line-height: 0;
-//       vertical-align: middle;
-//       position: absolute;
-//       transition: $mainTransition;
-//    }
-
-//    @media (max-width: $mobile) {
-//       height: toRem(2);
-//       background-color: $mainColor;
-//       border-radius: 2px;
-//    }
-// }
-
-// .header__menu-burger.-active {
-//    &:before {
-//       top: 50%;
-//       transform: rotateZ(-45deg);
-//    }
-
-//    &::after {
-//       top: 50%;
-//       transform: rotateZ(45deg);
-//    }
-// }
-// .header__menu-burger.-active span{
-//    transform: scale(0);
-// }
+@media (max-width: $tablet) {
+   .header {
+      display: none;
+   }
+}

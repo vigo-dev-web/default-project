@@ -1,3 +1,13 @@
 @import '../base/vars';
+
 .footer {
+   padding-top: toRem(36);
+   @media (max-width: $tablet) {
+      padding-top: toRem(24);
+   }
+}
+.footer__container {
+   @media (max-width: $tablet) {
+      padding: 0 toRem(18) !important;
+   }
 }

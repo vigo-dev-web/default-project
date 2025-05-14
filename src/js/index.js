@@ -1,7 +1,3 @@
-import "./libs/accordion.js"
-import './libs/modal.js'
-import './libs/scroll.js'
-import './libs/slider.js'
-import './libs/mobileMenu.js'
+// import './libs/accordion.js's
 
 console.log('Project has been started...')

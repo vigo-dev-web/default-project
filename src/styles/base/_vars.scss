@@ -1,28 +1,51 @@
 // colors
 
-$mainColor: #FFB600;
-$secondColor: #FEDA7F;
-$textColor: #473B35;
-$whiteColor: #FCFCFC;
-$greyColor: #909090;
+$textColor: rgba(16, 19, 35, 1);
+$textSecondColor: rgba(24, 29, 39, 1);
+$blackColor: rgba(0, 0, 0, 1);
+$whiteColor: rgba(255, 255, 255, 1);
+$whiteColor200: rgba(250, 250, 250, 1);
+$greyColor100: rgba(245, 251, 255, 1);
+$greyColor200: rgba(245, 245, 245, 1);
+$blueColor: rgba(0, 134, 201, 1);
+$blueDarkColor: rgba(6, 89, 134, 1);
+$orangeColor:rgba(236, 74, 10, 1);
+$redColor: rgba(196, 50, 10, 1);
+$greenColor: rgba(2, 122, 72, 1);
+
+$filter: brightness(0) saturate(100%) invert(33%) sepia(58%) saturate(1829%) hue-rotate(173deg) brightness(100%) contrast(105%);
 
 // interactions
 
-$boxShadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+$boxShadow: 0 0 10px 0 rgba(6, 44, 65, 0.16);
 $mainTransition: all .3s ease-out;
+
+// functions
+
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem; 
+  @return $remValue;
+}
+
+@function toEm($value) {
+  $emValue: calc($value / 16) + em; 
+  @return $emValue;
+}
 
 // mockup width
 
 $maxWidth: toRem(1920);
-$minWidth: toRem(375);
+$minWidth: toRem(360);
 
 // container width
 
-$maxWidthContainer: toRem(1572);
+$container: 1260;
 
-$containerPadding: toRem(10);
+$secondContainer: 996;
 
-$containerWidth: $maxWidthContainer + $containerPadding;
+$containerPadding: 20;
+
+$containerWidth: toRem($container + $containerPadding);
 
 // device width
 
@@ -30,57 +53,84 @@ $ps: toEm($containerWidth);
 $tablet: toEm(991.98);
 $sTablet: toEm(767.98);
 $mobile: toEm(575.98);
-$sMobile: toEm(375.98);
+$sMobile: toEm(479.98);
+
+// fonts
+
+$baseFont: "Inter", sans-serif;
+$secondFont: "Inter", sans-serif;
 
 // titles size
 
-$mainTitleSize: toRem(76);
-$secondTitleSize: toRem(56);
-$thirdTitleSize: toRem(36);
+$firstTitleSize: toRem(40);
+$secondTitleSize: toRem(32);
+$thirdTitleSize: toRem(24);
+$fourthTitleSize: toRem(20);
+$fifthTitleSize: toRem(16);
 
 // mixins
 
 @mixin mainTitle {
   font-size: $mainTitleSize;
   font-weight: 700;
-  line-height: 1.3;
-  color: $textColor;
+  line-height: 1.2;
+  color: $titleColor;
 }
 
-@mixin link-btn ($backgroundColor, $color) {
-  display: inline-block;
+
+@mixin main-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   position: relative;
-  background-color: $backgroundColor;
-  color: $color;
+  background-color: $blueColor;
+  color: $whiteColor;
   transition: $mainTransition;
-  box-shadow: $boxShadow;
-
+  font-size: toRem(16);
+  font-weight: 700;
+  line-height: toRem(24);
+  border-radius: toRem(4);
+  padding: toRem(8) toRem(10);
+  overflow: hidden;
+  font-family: inherit;
   @media (any-hover:hover) {
     &:hover {
-      transform: translateY(3px);
+      background-color: $blueHoverColor;
     }
   }
 }
 
+@mixin stroke-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: $whiteColor;
+  color: $blueColor;
+  transition: $mainTransition;
+  font-size: toRem(16);
+  font-weight: 400;
+  line-height: toRem(24);
+  border-radius: toRem(4);
+  padding: toRem(7) toRem(16);
+  font-family: inherit;
+  border: 1px solid $blueColor;
+  overflow: hidden;
+  @media (any-hover:hover) {
+    &:hover {
+      background-color: $whiteColor300;
+    }
+  }
+}
+
+
 @mixin adaptiveValue($property, $S-max, $S-min ) {
-  $k: calc(($S-max - $S-min)/(768 - 320));
+  $k: calc(($S-max - $S-min)/(768 - 360));
   $b: $S-min - $k * 320;
 
   $b: $b + px;
   #{$property}: calc(#{$k} * 100vw + #{$b})
 }
 
-// functions
 
-@function toRem($value) {
-  $remValue: (
-    $value / 16) + rem;
-  @return $remValue;
-}
-
-@function toEm($value) {
-  $remValue: (
-    $value / 16) + em;
-  @return $remValue;
-}

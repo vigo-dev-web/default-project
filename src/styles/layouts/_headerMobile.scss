@@ -1,0 +1,24 @@
+@import '../base/vars';
+
+.header-mobile {
+   display: none;
+}
+
+@media (max-width: $tablet) {
+   
+.header-mobile {
+   display: block;
+   position: relative;
+   top: 0;
+   left: 0;
+   right: 0;
+   padding-top: toRem(20);
+   padding-bottom: toRem(2);
+   z-index: 130;
+   background-color: $whiteColor;
+   box-shadow: $boxShadow;
+   margin-bottom: toRem(32);
+}
+}
+
+

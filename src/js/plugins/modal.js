@@ -4,14 +4,14 @@ const body = document.body
 
 const openModal = (modal) => {
    const modalBody = modal.firstElementChild.firstElementChild
-   modal.classList.add('--open')
-   modalBody.classList.add('--open');
+   modal.classList.add('_open')
+   modalBody.classList.add('_open');
 };
 
 const closeModal = (modal) => {
    const modalBody = modal.firstElementChild.firstElementChild
-   modal.classList.remove('--open')
-   modalBody.classList.remove('--open')
+   modal.classList.remove('_open')
+   modalBody.classList.remove('_open')
 }
 
 if (modals.length > 0) {
@@ -20,7 +20,7 @@ if (modals.length > 0) {
          modals.forEach(modalWindow => {
             if (btn.dataset.modalLink === modalWindow.dataset.modal) {
                openModal(modalWindow)
-               body.classList.add('--lock')
+               body.classList.add('_lock')
             }
          })
       })
@@ -30,10 +30,10 @@ if (modals.length > 0) {
       modalWindow.addEventListener   ('click', (e) => {
          if (e.target.dataset.close) {
             closeModal(modalWindow)
-            body.classList.remove('--lock')
+            body.classList.remove('_lock')
          }
       })
    });
 }
 
-console.log('Modal is ready...');
+

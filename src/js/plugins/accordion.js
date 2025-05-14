@@ -9,11 +9,9 @@ menuItems.forEach((item) => {
 
          submenuItems.forEach((submenuItem) => {
             if (item.dataset.menuId === submenuItem.dataset.item) {
-               submenuItem.classList.toggle('-open')
+               submenuItem.classList.toggle('_open')
             }
          })
       }, delayTime)
    })
 });
-
-console.log('Accordion is ready...')
