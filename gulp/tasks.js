@@ -51,13 +51,12 @@ function img() {
 	)
 }
 
-function scripts(cb) {
-	gulp
+function scripts() {
+	return gulp
 		.src(`${paths.src}js/**/*.js`, { sourcemaps: true })
 		.pipe(plugins.webpack())
 		.pipe(gulp.dest(`${paths.dist}js/`))
 		.pipe(plugins.browserSync.stream())
-	cb()
 }
 
 const task = {

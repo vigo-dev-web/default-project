@@ -35,7 +35,7 @@ const plugins = {
 	}),
 	webpack: () =>
 		webpackStream({
-			mode: 'production',
+			mode: 'development',
 			output: {
 				filename: 'index.js'
 			},

@@ -77,7 +77,6 @@ $fifthTitleSize: toRem(16);
   color: $titleColor;
 }
 
-
 @mixin main-btn {
   display: flex;
   align-items: center;
@@ -89,11 +88,12 @@ $fifthTitleSize: toRem(16);
   transition: $mainTransition;
   font-size: toRem(16);
   font-weight: 700;
-  line-height: toRem(24);
+  line-height: 1;
   border-radius: toRem(4);
-  padding: toRem(8) toRem(10);
+  padding: toRem(10) toRem(10);
   overflow: hidden;
   font-family: inherit;
+  width: 100%;
   @media (any-hover:hover) {
     &:hover {
       background-color: $blueHoverColor;
@@ -111,9 +111,9 @@ $fifthTitleSize: toRem(16);
   transition: $mainTransition;
   font-size: toRem(16);
   font-weight: 400;
-  line-height: toRem(24);
+  line-height: 1;
   border-radius: toRem(4);
-  padding: toRem(7) toRem(16);
+  padding: toRem(10) toRem(10);
   font-family: inherit;
   border: 1px solid $blueColor;
   overflow: hidden;

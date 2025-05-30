@@ -1,6 +1,7 @@
-@import '../base//vars';
+@import '../base/vars';
 
-.modal {
+.modal
+{
    position: fixed;
    height: 100%;
    width: 100%;
@@ -12,45 +13,65 @@
    overflow: hidden;
    cursor: pointer;
    transition: $mainTransition;
-   z-index: 99999;
+   z-index: 200;
 }
 
-.modal.--open {
+.modal._open
+{
    opacity: 1;
    visibility: visible;
 }
 
-.modal__overlay {
+.modal__overlay
+{
    min-height: 100vh;
    display: flex;
    justify-content: center;
    align-items: center;
    padding: toRem(10);
-}
+   z-index: 300;
 
-.modal__body {
-   position: relative;
-   background-color: $whiteColor;
-   padding: 1rem toRem(20);
-   width: toRem(450);
-   opacity: 0;
-   transform: translateY(-100%);
-   cursor: default;
-   transition: $mainTransition;
-
-   @media (max-width: $sMobile) {
-      width: toRem(320);
+   @media (max-width: $mobile)
+   {
+      padding: 0;
    }
 }
 
-.modal__body.--open {
-   opacity: 1;
-   transform: translateY(0);
+.modal__body
+{
+   position: relative;
+   background-color: $whiteColor;
+   padding: toRem(36);
+   width: 100%;
+   max-width: toRem(414);
+   border-radius: toRem(4);
+   cursor: default;
+   transition: $mainTransition;
+   box-shadow: $boxShadow;
+
+   @media (max-width: $mobile)
+   {
+      max-width: none;
+      width: 100%;
+      height: 100vh;
+      border-radius: unset;
+      padding-top: toRem(40);
+      padding-inline: toRem(16);
+   }
 }
 
-.modal__close {
+.modal__close
+{
    position: absolute;
    right: toRem(16);
    top: toRem(16);
    cursor: pointer;
+   color: #a1a1a1;
+   font-weight: 400;
+}
+
+.modal__title
+{
+   margin-bottom: toRem(16);
+   line-height: toRem(44);
 }
